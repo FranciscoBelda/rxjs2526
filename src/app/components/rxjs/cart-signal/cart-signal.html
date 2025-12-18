@@ -1,0 +1,105 @@
+<h2 class="text-primary">Gestión del carrito</h2>
+<div class="row">
+  @for (product of products; track product.id){
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h3 class="card-title">{{product.name}}</h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            {{product.price | currency: 'EUR'}}
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-success" (click)="onAddToCart(product)" type="button">
+                <i class="bi bi-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<hr>
+
+<div class="container my-5">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+
+      <h2 class="h5 mb-0">
+        <i class="bi bi-cart3 me-2"></i>Tu Carrito de Compra
+      </h2>
+      <span class="badge bg-light text-primary rounded-pill">{{ cartItems().length }} Productos</span>
+    </div>
+
+
+    <div class="card-body">
+      @if (cartItems().length === 0) {
+        <div class="alert alert-info text-center py-5 shadow-sm" role="alert">
+          <i class="bi bi-cart-x fs-1 d-block mb-3"></i>
+          <h4 class="alert-heading">¡Tu carrito está vacío!</h4>
+          <p class="mb-0">Parece que aún no has añadido nada a tu selección.</p>
+        </div>
+      } @else {
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+            <tr>
+              <th scope="col">Producto</th>
+              <th scope="col" class="text-center">Precio</th>
+              <th scope="col" class="text-center">Cantidad</th>
+              <th scope="col" class="text-end">Subtotal</th>
+              <th scope="col" class="text-center">Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+              @for (item of cartItems(); track item.id) {
+                <tr>
+                  <td>
+                    <span class="fw-bold">{{ item.name }}</span>
+                  </td>
+                  <td class="text-center text-muted">{{ item.price | currency }}</td>
+                  <td class="text-center" style="width: 120px;">
+                    <input
+                      type="number"
+                      class="form-control form-control-sm text-center"
+                      [value]="item.quantity"
+                      (change)="updateItemQuantity(item.id, $event)"
+                      min="1"
+                    />
+                  </td>
+                  <td class="text-end fw-semibold">
+                    {{ item.price * item.quantity | currency }}
+                  </td>
+                  <td class="text-center">
+                    <button (click)="removeItem(item.id)" class="btn btn-outline-danger btn-sm shadow-sm" title="Eliminar producto">
+                      Eliminar
+                    </button>
+                  </td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+
+        <div class="d-flex justify-content-end align-items-center mt-4 p-3 bg-light rounded shadow-sm">
+          <div class="text-end">
+            <p class="text-muted mb-1">Total a pagar:</p>
+            <h3 class="text-primary fw-bold">{{ cartTotal() | currency }}</h3>
+            <button (click)="goToPay()" class="btn btn-success btn-lg mt-2 w-100 w-md-auto px-5">
+              Finalizar Compra
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+
+
+

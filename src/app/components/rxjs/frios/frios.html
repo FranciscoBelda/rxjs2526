@@ -1,0 +1,16 @@
+<h1 class="text-secondary">Posts</h1>
+@if (dataOne$ | async; as myData){
+  <p class="text-primary">{{ myData.nombre }}</p>
+}
+@for (data of data$ | async; track data._id){
+  <div class="card">
+    <div class="card-header">
+      <h2 class="card-title">{{data.nombre}}</h2>
+    </div>
+    <div class="card-body">
+      <h4>{{data.categoria}}</h4>
+    </div>
+  </div>
+}
+
+

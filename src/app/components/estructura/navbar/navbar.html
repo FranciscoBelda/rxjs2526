@@ -1,0 +1,63 @@
+<nav class="navbar  bg-dark border-bottom border-body navbar-expand-lg" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/">RXJS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/ejemplo01">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/frios">Frios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/calientes">Calientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/operadores">Operadores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/switch-map">SwitchMap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/orden-superior">Orden Superior</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/subject">Subject</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  position-relative" routerLinkActive="active" routerLink="/behavior-subject">
+            Valor
+            <span class=" mt-2 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {{carrito}}
+    <span class="visually-hidden">unread messages</span>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item ms-2">
+          <a class="nav-link d-flex align-items-center text-dark" routerLinkActive="active" routerLink="/cart-signals">
+            <div class="position-relative d-inline-block me-3">
+              <i class="bi bi-cart4 fs-4 text-light"></i>
+              @if (cartTotalItems() > 0){
+                <span class="top-0 position-absolute start-100 translate-middle badge rounded-pill bg-danger border border-light"
+                style="font-size: 0.7rem">
+                  {{ cartTotalItems() }}
+                  <span class="visually-hidden">productos</span>
+                </span>
+              }
+            </div>
+            <span class="fw-bold border-start ps-2 text-primary">
+              {{ cartTotalPrice() | currency: 'EUR' }}
+            </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" routerLink="/fork-join">ForkJoin</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

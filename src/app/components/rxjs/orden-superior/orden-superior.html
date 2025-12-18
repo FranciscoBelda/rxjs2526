@@ -1,0 +1,23 @@
+@if (data$){
+  <h1 class="text-primary">Orden Superior</h1>
+  <button class="btn btn-outline-primary" (click)="loadCharacter()">RANDOMIZE</button>
+  @if (data$ | async; as char){
+    <ng-container>
+      <h2 class="text-secondary text-center">Character Rick & Morty</h2>
+      <h3 class="text-secondary text-center">{{char.name}}</h3>
+
+    </ng-container>
+  }
+  <hr>
+  @if (dataJ$ | async; as char){
+    <ng-container>
+      <h2 class="text-secondary text-center">Juguete</h2>
+      <h3 class="text-secondary text-center">{{char.nombre}}</h3>
+
+    </ng-container>
+  }
+
+
+} @else {
+  <h2>Loading...</h2>
+}
