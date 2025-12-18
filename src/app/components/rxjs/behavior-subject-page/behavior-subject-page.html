@@ -1,0 +1,22 @@
+<h1 class="text-primary">Behavior Subject</h1>
+<button class="btn btn-secondary" (click)="addToCarrito()">Soy un BEhavior Subject!! Añade {{valor}}</button>
+
+<div class="d-flex justify-content-center">
+  <button class="btn btn-success mx-1" (click)="valor=1">1</button>
+  <button class="btn btn-warning mx-1" (click)="valor=5">5</button>
+  <button class="btn btn-danger mx-1" (click)="valor=10">10</button>
+</div>
+
+<h2 class="text-danger-emphasis">Valor del Subject</h2>
+<h3 class=" text-secondary">{{myBehaviorSubject | async}}</h3>
+<h2 class="text-danger-emphasis">Listado de números</h2>
+@if (numeros.length == 0) {
+  <h3 class="text-danger">No hay números</h3>
+}
+@for (num of numeros; track $index){
+  <h3 class="text-info">{{num}}</h3>
+}
+
+<button class="btn btn-outline-dark" (click)="subscribete()">Subscribete</button>
+<h2 class="text-secondary">Behavior </h2>
+<h3 class="text-info">{{dato}}</h3>

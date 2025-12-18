@@ -1,6 +1,11 @@
 {
   "name": "01-rxjs-teoria",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Francisco Belda",
+    "email": "francisco.belda@solvam.es",
+    "web": "https://github.com/franciscobelda"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,6 +33,10 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "@ng-bootstrap/ng-bootstrap": "^19.0.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -36,6 +45,7 @@
     "@angular/build": "^20.3.0",
     "@angular/cli": "^20.3.0",
     "@angular/compiler-cli": "^20.3.0",
+    "@angular/localize": "^20.3.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",

@@ -1,0 +1,19 @@
+<div class="d-flex justify-content-center align-items-center flex-column">
+  <form class="my-5 d-flex justify-content-center">
+    <input type="search" class="form-control me-2" placeholder="Search" (input)="search($event)"  aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+
+  <div class="row">
+    @for (character of characters$ | async; track character.id){
+      <div class="col-md-3">
+        <div class="card">
+          <img [src]="character.image" [alt]="character.name" class="card-img-top">
+          <div class="card-header">
+            <h5 class="card-title">{{character.name}}</h5>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

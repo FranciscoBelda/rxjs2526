@@ -1,0 +1,12 @@
+<div class="row">
+  @for (poke of pokemons; track poke.url){
+    <div class="col-md-3">
+      <div class="card shadow-sm">
+        <img [src]="poke.front_shiny" [alt]="poke.name" class="card-img-top">
+        <div class="card-header">
+          <h3 class="card-title">{{poke.name}}</h3>
+        </div>
+      </div>
+    </div>
+  }
+</div>
