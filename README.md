@@ -1,59 +1,69 @@
-# 01RxjsTeoria
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.0.
 
-## Development server
+# RxJS Mastery - Ejercicios de Programación Reactiva
 
-To start a local development server, run:
+Este repositorio contiene una serie de ejercicios prácticos para aprender y dominar **RxJS** (Reactive Extensions for JavaScript). El proyecto está estructurado de forma progresiva, desde conceptos básicos de Observables hasta el uso de operadores complejos de transformación y combinación.
 
+## 📋 Requisitos Previos
+
+Para ejecutar los ejercicios, necesitarás:
+
+* **Node.js** (Versión LTS recomendada).
+* **NPM**  para la gestión de paquetes.
+
+## 🚀 Instalación y Uso
+
+1. **Clonar el repositorio**:
 ```bash
-ng serve
+git clone https://github.com/FranciscoBelda/rxjs2526.git
+cd rxjs2526
+
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. **Instalar dependencias**:
 ```bash
-ng generate component component-name
+npm install
+
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
+3. **Ejecutar el proyecto**:
+Este proyecto utiliza un servidor de desarrollo (probablemente Vite o Webpack Dev Server) para visualizar los resultados de los observables en la consola del navegador:
 ```bash
-ng generate --help
+npm start
+
 ```
 
-## Building
 
-To build the project run:
+Luego, abre tu navegador en `http://localhost:xxxx` y revisa la **Consola de Desarrollador (F12)**.
 
-```bash
-ng build
-```
+## 🏗️ Estructura del Proyecto
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+El código está organizado en carpetas numeradas que representan diferentes etapas del aprendizaje de RxJS:
 
-## Running unit tests
+* **01-Observables**: Creación de observables básicos, `subscribe`, `unsubscribe` y el uso de `Observer`.
+* **02-Operators**: Uso de operadores de filtrado y transformación comunes (`map`, `filter`, `tap`).
+* **03-Combination**: Operadores para combinar múltiples flujos de datos (`merge`, `concat`, `forkJoin`, `combineLatest`).
+* **04-Ajax**: Gestión de peticiones HTTP de forma reactiva con el operador `ajax`.
+* **05-Transformación**: Operadores de aplanamiento como `mergeMap`, `switchMap` y `concatMap`.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🛠️ Conceptos Clave Implementados
 
-```bash
-ng test
-```
+* **Observables & Observers**: El núcleo de la librería.
+* **Subjects**: Uso de `Subject` para multicasting y envío de datos a múltiples suscriptores.
+* **Marble Diagrams**: Los ejercicios están diseñados para entender visualmente cómo fluye la información a través del tiempo.
+* **Manejo de Memoria**: Implementación de patrones para evitar memory leaks mediante la limpieza de suscripciones.
 
-## Running end-to-end tests
+## 📚 Operadores Destacados en el Proyecto
 
-For end-to-end (e2e) testing, run:
+| Tipo | Operadores |
+| --- | --- |
+| **Creación** | `of`, `from`, `interval`, `timer`, `fromEvent` |
+| **Transformación** | `map`, `pluck`, `mapTo`, `scan` |
+| **Filtrado** | `filter`, `take`, `first`, `debounceTime`, `distinctUntilChanged` |
+| **Combinación** | `startWith`, `endWith`, `concat`, `merge` |
 
-```bash
-ng e2e
-```
+## 👤 Autor
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* **Francisco Belda** - [GitHub](https://github.com/FranciscoBelda)
